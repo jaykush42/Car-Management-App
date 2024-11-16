@@ -35,7 +35,11 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 const port = process.env.PORT || 5000;
 const mongoUri = process.env.MONGO_URI;
 
-
+// Serve the Postman docs JSON
+app.get('/api/docs', (req, res) => {
+  const docsPath = path.join(__dirname, 'docs', 'CarManagementApp.postman_collection.json');
+  res.sendFile(docsPath);
+});
 
 mongoose.connect(mongoUri).then(()=>console.log("connected DB"));
 

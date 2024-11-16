@@ -1,0 +1,307 @@
+{
+	"info": {
+		"_postman_id": "2a721dd3-d365-4f42-9150-d19d58ad6299",
+		"name": "CarManagementApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31857388"
+	},
+	"item": [
+		{
+			"name": "Create a Car",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzgzM2YyYjhjNTAyNGUzZjAxMzBjMiIsImlhdCI6MTczMTczNjY0OSwiZXhwIjoxNzMxODIzMDQ5fQ.KU7GUwCKDPWh1tgTskcK2-jij9xJsB-_KR4AFNKMmFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Breeza",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "This is a description of the car.",
+							"type": "text"
+						},
+						{
+							"key": "tags",
+							"value": "2024, automatic",
+							"type": "text"
+						},
+						{
+							"key": "images",
+							"type": "file",
+							"src": [
+								"postman-cloud:///1efa3deb-b5ba-4f70-9b7b-c9fd161a0bdb",
+								"postman-cloud:///1efa3deb-b42f-4750-aec6-f2591b8d7ba0",
+								"postman-cloud:///1efa3deb-b447-4df0-9213-049a26afd054"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "https://car-management-app-backend-wje9.onrender.com/api/cars/",
+					"protocol": "https",
+					"host": [
+						"car-management-app-backend-wje9",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"cars",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register A User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"test\",\n    \"password\": \"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://car-management-app-backend-wje9.onrender.com/api/auth/signup",
+					"protocol": "https",
+					"host": [
+						"car-management-app-backend-wje9",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login a User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"test\",\n    \"password\": \"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://car-management-app-backend-wje9.onrender.com/api/auth/login",
+					"protocol": "https",
+					"host": [
+						"car-management-app-backend-wje9",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cars",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzgzM2YyYjhjNTAyNGUzZjAxMzBjMiIsImlhdCI6MTczMTczNjY0OSwiZXhwIjoxNzMxODIzMDQ5fQ.KU7GUwCKDPWh1tgTskcK2-jij9xJsB-_KR4AFNKMmFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://car-management-app-backend-wje9.onrender.com/api/cars/",
+					"protocol": "https",
+					"host": [
+						"car-management-app-backend-wje9",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"cars",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get A Car by Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzgzM2YyYjhjNTAyNGUzZjAxMzBjMiIsImlhdCI6MTczMTczNjY0OSwiZXhwIjoxNzMxODIzMDQ5fQ.KU7GUwCKDPWh1tgTskcK2-jij9xJsB-_KR4AFNKMmFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://car-management-app-backend-wje9.onrender.com/api/cars/673835a1b8c5024e3f0130d5",
+					"protocol": "https",
+					"host": [
+						"car-management-app-backend-wje9",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"cars",
+						"673835a1b8c5024e3f0130d5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Car",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzgzM2YyYjhjNTAyNGUzZjAxMzBjMiIsImlhdCI6MTczMTczNjY0OSwiZXhwIjoxNzMxODIzMDQ5fQ.KU7GUwCKDPWh1tgTskcK2-jij9xJsB-_KR4AFNKMmFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://car-management-app-backend-wje9.onrender.com/api/cars/673834cab8c5024e3f0130cb",
+					"protocol": "https",
+					"host": [
+						"car-management-app-backend-wje9",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"cars",
+						"673834cab8c5024e3f0130cb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update a Car",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzgzM2YyYjhjNTAyNGUzZjAxMzBjMiIsImlhdCI6MTczMTczNjY0OSwiZXhwIjoxNzMxODIzMDQ5fQ.KU7GUwCKDPWh1tgTskcK2-jij9xJsB-_KR4AFNKMmFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Brezza",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "This is a description of the car and fully automatic",
+							"type": "text"
+						},
+						{
+							"key": "tags",
+							"value": "2024, automatic, updated",
+							"type": "text"
+						},
+						{
+							"key": "images",
+							"type": "file",
+							"src": [
+								"postman-cloud:///1efa3deb-b5ba-4f70-9b7b-c9fd161a0bdb",
+								"postman-cloud:///1efa3deb-b42f-4750-aec6-f2591b8d7ba0"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "https://car-management-app-backend-wje9.onrender.com/api/cars/673835a1b8c5024e3f0130d5",
+					"protocol": "https",
+					"host": [
+						"car-management-app-backend-wje9",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"cars",
+						"673835a1b8c5024e3f0130d5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
