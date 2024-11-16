@@ -19,10 +19,7 @@ const mongoUri = process.env.MONGO_URI;
 
 
 
-mongoose.connect(mongoUri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(()=>console.log("connected DB"));
+mongoose.connect(mongoUri).then(()=>console.log("connected DB"));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/cars', carRoutes);
